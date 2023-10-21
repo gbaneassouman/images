@@ -105,7 +105,7 @@ CMD [ "nginx","-g","daemon off;" ]
 FROM nginx:latest<br/>
 LABEL maintainer="GBANE Assouman gbane.assouman@gmail.com"
 
-- <strong>Repertoire du site</strong><br/>
+- <strong>Répertoire du site</strong><br/>
 WORKDIR /usr/share/nginx/html
 
 - <strong>Copie des fichiers dans le répertoire</strong><br/>
