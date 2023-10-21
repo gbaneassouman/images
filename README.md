@@ -99,7 +99,7 @@ Voici les étapes à suivre pour ajouter l’intégration Jenkins CI.
 
 ### Étape 1
 Dans le tableau de bord Jenkins, cliquez sur Administrer Jenkins dans la barre de navigation à gauche.
-![](.logo/slack-1.png)
+![](slack-1.png)
 
 ### Étape 2
 Cliquez sur Plugins puis Available plugins et recherchez Slack Notification dans l’onglet search available plugins. Cochez la case et installez le plugin.
