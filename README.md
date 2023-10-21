@@ -88,7 +88,7 @@ et  enfin configuré letsencrypt avec un sous-domaine.
 ![](jenkins-url.jpg)
 
 # Intrégation de la notification Slack 
-![](.logo/slack-2.svg)
+![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
 Nous allons intégrer slack à notre environnement jenkins pour recevoir directement des notifications après l'execution de notre pipeline.
 
