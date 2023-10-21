@@ -11,7 +11,7 @@ Ce Projet dénommé Mini projet jenkins a été réalisé dans le cadre ma forma
 ## Objectifs
 Il s’agit ici de mettre en œuvre une chaîne d’intégration continue pour un site web static *(voir image en dessous)* avec jenkins. le code source est [ici](https://github.com/diranetafen/static-website-example) .
 
-![](pipeline.png)
+![](screenshots/pipeline.png)
  
 ## À faire
 Pour la réalisation du project j'ai procédé comme suit:
@@ -30,7 +30,7 @@ J'ai suivi les étapes ci-dessous pour la réalisation du projet.
 
 J’ai choisi 03 VPS de type Lightsail chez *AWS* *(01 pour Jenkins, 01 pour l'environnement de staging et le dernier pour l'environnement de la Prod)*
 
-![](vps.png)
+![](screenshots/vps.png)
 Sur chaque VPS j’ai installé  Debian 11.4, docker et docker-compose
 Sur le VPS de jenkins :
   j’ai installé jenkins à l’aide de docker-compose sur le vps jenkins. Dans ma configuration le conteneur n’est accessible que sur la machine hôte à partir de  **127.0.0.1:8080**
@@ -85,7 +85,7 @@ RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 
 et  enfin configuré letsencrypt avec un sous-domaine.
 
-![](jenkins-url.jpg)
+![](screenshots/jenkins-url.jpg)
 
 # Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
@@ -99,12 +99,12 @@ Voici les étapes à suivre pour ajouter l’intégration Jenkins CI.
 
 ### Étape 1
 Dans le tableau de bord Jenkins, cliquez sur Administrer Jenkins dans la barre de navigation à gauche.
-![](slack-1.png)
+![](screenshots/slack-1.png)
 
 ### Étape 2
 Cliquez sur Plugins puis Available plugins et recherchez Slack Notification dans l’onglet search available plugins. Cochez la case et installez le plugin.
 
-![](.logo/slack-installation.png)
+![](screenshots/slack-installation.png)
 
 ### Étape 3 
 Une fois l’installation effectuée, cliquez de nouveau sur Administrer Jenkins dans le volet de navigation gauche, puis accédez à **Configure System** (Configurer le système).
@@ -120,7 +120,7 @@ Pour obtenir le **workspace** et **Token** il faut au préalable:
 
 
 
-![](.logo/slack-integration.png)
+![](screenshots/slack-integration.png)
 
 à partir de cet instant on peux ajouter les notifications slack dans le **Jenkinsfile**
 
@@ -151,14 +151,14 @@ def call(String buildResult) {
 
 - configurer la Shared Library à partir de ***Administrer jenkins -> System -> Global Pipeline Libraries***
 
-![](.logo/shared-library.png)
+![](screenshots/shared-library.png)
 
 - importer la Shared library précédemment configurée dans le Jenkinsfile 
 
-![](.logo/import-shared.png)
+![](screenshots/import-shared.png)
 - et faire appel à la fonction de notification
 
-![](.logo/slackNotifier.png)
+![](screenshots/slackNotifier.png)
 
 ## Demo
 
