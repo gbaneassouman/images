@@ -155,11 +155,22 @@ def call(String buildResult) {
 
 - importer la Shared library précédemment configurée dans le Jenkinsfile 
 
-![](screenshots/import-shared.png)
+```
+@Library('slack-shared-library') _
+
+```
 - et faire appel à la fonction de notification
 
-![](screenshots/slackNotifier.png)
-
+```
+post {
+        always {
+            script {
+                /* Use Slack-notification.groovy from shared library */
+                slackNotifier currentBuild.result
+            }
+        }
+    }
+```
 ## Demo
 
 voir [ici](https://github.com/diranetafen/student-list.git "here")
