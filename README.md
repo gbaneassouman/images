@@ -16,7 +16,7 @@ Il s’agit ici de mettre en œuvre une chaîne d’intégration continue pour u
 ## À faire
 Pour la réalisation du project j'ai procédé comme suit:
 - 1 Provisionner 3 VPS 
-- 2 installer docker sur chaque vps <!--à partir de la documentation officielle qui se trouve [ici](https://docs.docker.com/engine/install/debian/)  -->
+- 2 installer docker sur chaque vps 
 - 3 Installer jenkins sur le vps 
 - 4 Produire le Dockerfile pour le Build
 - 5 Mettre en place le Pipeline
@@ -31,9 +31,12 @@ J'ai suivi les étapes ci-dessous pour la réalisation du projet.
 J’ai choisi 03 VPS de type Lightsail chez *AWS* *(01 pour Jenkins, 01 pour l'environnement de staging et le dernier pour l'environnement de la Prod)*
 
 ![](screenshots/vps.png)
-Sur chaque VPS j’ai installé  Debian 11.4, docker et docker-compose
+Sur chaque VPS j’ai installé:
+- Debian 11.4
+- docker et docker-compose en suivant la documentation qui se trouve [ici](https://docs.docker.com/engine/install/debian/)
+
 Sur le VPS de jenkins :
-  j’ai installé jenkins à l’aide de docker-compose sur le vps jenkins. Dans ma configuration le conteneur n’est accessible que sur la machine hôte à partir de  **127.0.0.1:8080**
+- Jenkins a été installé à l’aide de docker-compose . Dans ma configuration le conteneur n’est accessible que sur la machine hôte à partir de  **127.0.0.1:8080**
 
 ```
 version: '3.3'
@@ -87,6 +90,37 @@ et  enfin configuré letsencrypt avec un sous-domaine.
 
 ![](screenshots/jenkins-url.jpg)
 
+# Dockerfile 
+Voici ci-dessous le dockerfile qui a permit de créer l'image Docker à partir de laquelle nos conteneurs seront créées.
+```
+FROM nginx:latest
+LABEL maintainer="GBANE Assouman gbane.assouman@gmail.com"
+WORKDIR /usr/share/nginx/html
+COPY . .
+EXPOSE 80
+CMD [ "nginx","-g","daemon off;" ]
+
+```
+- <strong>image de base Docker</strong><br/>
+FROM nginx:latest<br/>
+LABEL maintainer="GBANE Assouman gbane.assouman@gmail.com"
+
+- <strong>Répertoire du site</strong><br/>
+WORKDIR /usr/share/nginx/html
+
+- <strong>Copie des fichiers dans le répertoire</strong><br/>
+COPY . .
+
+- <strong>Port d'écoute de NGINX </strong><br/>
+EXPOSE 80
+
+- <strong>Démarrage de NGINX</strong><br/>
+CMD [ "nginx","-g","daemon off;" ]
+
+# Mise en place du Pipeline
+Création du pipeline
+
+![](screenshots/staticweb.png)
 # Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
@@ -155,11 +189,22 @@ def call(String buildResult) {
 
 - importer la Shared library précédemment configurée dans le Jenkinsfile 
 
-![](screenshots/import-shared.png)
-- et faire appel à la fonction de notification
+```
+@Library('slack-shared-library') _
 
-![](screenshots/slackNotifier.png)
+```
+- et faire appel à la fonction de notification en dehors de la balise des stages
 
+```
+post {
+        always {
+            script {
+                /* Use Slack-notification.groovy from shared library */
+                slackNotifier currentBuild.result
+            }
+        }
+    }
+```
 ## Demo
 
 voir [ici](https://github.com/diranetafen/student-list.git "here")
