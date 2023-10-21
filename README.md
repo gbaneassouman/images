@@ -16,7 +16,7 @@ Il s’agit ici de mettre en œuvre une chaîne d’intégration continue pour u
 ## À faire
 Pour la réalisation du project j'ai procédé comme suit:
 - 1 Provisionner 3 VPS 
-- 2 installer docker sur chaque vps <!--à partir de la documentation officielle qui se trouve [ici](https://docs.docker.com/engine/install/debian/)  -->
+- 2 installer docker sur chaque vps <!-- -->
 - 3 Installer jenkins sur le vps 
 - 4 Produire le Dockerfile pour le Build
 - 5 Mettre en place le Pipeline
@@ -33,7 +33,7 @@ J’ai choisi 03 VPS de type Lightsail chez *AWS* *(01 pour Jenkins, 01 pour l'e
 ![](screenshots/vps.png)
 Sur chaque VPS j’ai installé:
 - Debian 11.4
-- docker et docker-compose en suivant la documentation ![ici](https://docs.docker.com/engine/install/debian/)
+- docker et docker-compose en suivant la documentation qui se trouve [ici](https://docs.docker.com/engine/install/debian/) 
 Sur le VPS de jenkins :
   j’ai installé jenkins à l’aide de docker-compose sur le vps jenkins. Dans ma configuration le conteneur n’est accessible que sur la machine hôte à partir de  **127.0.0.1:8080**
 
