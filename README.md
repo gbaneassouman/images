@@ -159,7 +159,7 @@ def call(String buildResult) {
 @Library('slack-shared-library') _
 
 ```
-- et faire appel à la fonction de notification
+- et faire appel à la fonction de notification en dehors de la balise des stages
 
 ```
 post {
