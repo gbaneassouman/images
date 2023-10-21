@@ -102,7 +102,7 @@ CMD [ "nginx","-g","daemon off;" ]
 
 ```
 - <strong>image de base Docker</strong><br/>
-FROM nginx:latest
+FROM nginx:latest<br/>
 LABEL maintainer="GBANE Assouman gbane.assouman@gmail.com"
 
 - <strong>Repertoire du site</strong><br/>
