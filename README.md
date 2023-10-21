@@ -117,6 +117,10 @@ EXPOSE 80
 - <strong>Démarrage de NGINX</strong><br/>
 CMD [ "nginx","-g","daemon off;" ]
 
+# Mise en place du Pipeline
+Création du pipeline
+
+![](screenshots/staticweb.png)
 # Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
