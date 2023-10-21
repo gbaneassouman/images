@@ -101,6 +101,21 @@ EXPOSE 80
 CMD [ "nginx","-g","daemon off;" ]
 
 ```
+- <strong>image de base Docker</strong><br/>
+FROM nginx:latest
+LABEL maintainer="GBANE Assouman gbane.assouman@gmail.com"
+
+- <strong>Repertoire du site</strong><br/>
+WORKDIR /usr/share/nginx/html
+
+- <strong>Copie des fichiers dans le répertoire</strong><br/>
+COPY . .
+
+- <strong>Port d'écoute de NGINX </strong><br/>
+EXPOSE 80
+
+- <strong>Démarrage de NGINX</strong><br/>
+CMD [ "nginx","-g","daemon off;" ]
 
 # Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
