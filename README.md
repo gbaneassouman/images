@@ -31,7 +31,9 @@ J'ai suivi les étapes ci-dessous pour la réalisation du projet.
 J’ai choisi 03 VPS de type Lightsail chez *AWS* *(01 pour Jenkins, 01 pour l'environnement de staging et le dernier pour l'environnement de la Prod)*
 
 ![](screenshots/vps.png)
-Sur chaque VPS j’ai installé  Debian 11.4, docker et docker-compose
+Sur chaque VPS j’ai installé:
+- Debian 11.4
+- docker et docker-compose en suivant la documentation ![ici](https://docs.docker.com/engine/install/debian/)
 Sur le VPS de jenkins :
   j’ai installé jenkins à l’aide de docker-compose sur le vps jenkins. Dans ma configuration le conteneur n’est accessible que sur la machine hôte à partir de  **127.0.0.1:8080**
 
