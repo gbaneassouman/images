@@ -90,6 +90,18 @@ et  enfin configuré letsencrypt avec un sous-domaine.
 
 ![](screenshots/jenkins-url.jpg)
 
+# Dockerfile 
+Voici ci-dessous le dockerfile qui a permit de créer l'image Docker à partir de laquelle nos conteneurs seront créées.
+```
+FROM nginx:latest
+LABEL maintainer="GBANE Assouman gbane.assouman@gmail.com"
+WORKDIR /usr/share/nginx/html
+COPY . .
+EXPOSE 80
+CMD [ "nginx","-g","daemon off;" ]
+
+```
+
 # Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
