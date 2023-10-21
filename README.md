@@ -119,7 +119,7 @@ CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
 Création du pipeline
-
+Dans le tableau de bord Jenkins, cliquez sur Nouveau item dans la barre de navigation à gauche.
 ![](screenshots/staticweb.png)
 # Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
