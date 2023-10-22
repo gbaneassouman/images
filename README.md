@@ -119,7 +119,11 @@ EXPOSE 80
 CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
-
+Pour la mise du pipeline il faut:
+- installer les plugins necéssaires
+- créer des credentials
+- créer le pipeline
+  
 <strong>Installation des plugins </strong><br/>
 Pour l'installation des puglins necéssaires au pipeline on va dans 
 
@@ -260,6 +264,8 @@ Les Stages sont:
 - Deploy to Satging
 - Test in staging
 - Deploy to Prod
+et les éléments ci-dessous ont été variabilisés pour faciliter leur réutilisation dans les différents stages:
+- IMAGE_NAME, IMAGE_TAG, DOCKER_HUB, HOST_PORT, INTERNAL_PORT, CONTAINER, STAGING_IP, PROD_IP, USER_NAME, STAGING_NAME, PROD_NAME
 
 voir [ici](https://github.com/diranetafen/student-list.git "here")
 
