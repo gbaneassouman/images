@@ -20,8 +20,8 @@ Pour la réalisation du project j'ai procédé comme suit:
 - Installer jenkins sur le vps 
 - Produire le Dockerfile pour le Build
 - Mettre en place le Pipeline
-  - Configurer github webhook
-  - Intégrer la notification slack
+  - Configuration de github webhook
+  - Intégration de la notification slack
   - Production du Jenkinsfile
 
 
@@ -119,13 +119,13 @@ EXPOSE 80
 CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
-- <strong>Création du pipeline</strong>
+- <strong>Création du pipeline</strong><br/>
 
 Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard
 
 ![](screenshots/staticweb.png)
 
-- <strong>Mise en place du webhook </strong>
+- <strong>Mise en place du webhook </strong><br/>
 
 Pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
 Pour cela il faut:
@@ -166,7 +166,7 @@ il faut au préalable aller dans **Tableau de bord -> Administrer jenkins -> cre
 
 ![](screenshots/credentials.png)
 
-# Intrégation de la notification Slack 
+- <strong>Intrégation de la notification Slack </strong><br/>
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
 Nous allons intégrer slack à notre environnement jenkins pour recevoir directement des notifications après l'execution de notre pipeline.
