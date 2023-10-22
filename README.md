@@ -20,8 +20,8 @@ Pour la réalisation du project j'ai procédé comme suit:
 - Installer jenkins sur le vps 
 - Produire le Dockerfile pour le Build
 - Mettre en place le Pipeline
-- Configurer github webhook
-- Intégrer la notification slack
+  - Configurer github webhook
+  - Intégrer la notification slack
 
 
 
@@ -118,13 +118,15 @@ EXPOSE 80
 CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
-Création du pipeline
+- <strong>Création du pipeline</strong>
 
 Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard
 
 ![](screenshots/staticweb.png)
 
-Mise en place du webhook pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
+- <strong>Mise en place du webhook </strong>
+
+Pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
 Pour cela il faut:
 - Renseigner l'url du repository dans le pipeline 
 - Autoriser le déclenchement du webhook
@@ -142,7 +144,7 @@ confirmation que le webhook marche
 Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir Pipeline script from SCM
 ![](screenshots/choix-jenkins.png)
 
-### Installation des plugins
+- <strong>Installation des plugins </strong><br/>
 Pour l'installation des puglins necéssaires au pipeline on va dans 
 
 **Tableau de bord -> Administrer jenkins -> Plugins -> Available plugins** puis chercher les plugins suivants:
@@ -152,7 +154,7 @@ Pour l'installation des puglins necéssaires au pipeline on va dans
 - Github integration Plugin
 - SSH Agent plugin
 
-### Création des crédentials
+- <strong>Création des crédentials</strong><br/>
 Afin de pusher l'image buildée sur Docherhub *(hub.docker.com)* et de se connecter sur les serveurs de staging et de prod via ssh on va créer les identifiants ci-dessous:
 - dockerhub-credential de type Nom d'utilisateur et mot de passe
 - SSH-KEY de type SSH Username with private key	ici on copie la clé privée de connexion du serveur de staging
@@ -247,7 +249,18 @@ post {
         }
     }
 ```
-## Demo
+- <strong>Production de jenkinsfile </strong><br/>
+Le Jenkinsfile contient 08 stages et un Post Actions qui sont:
+- Cloning code
+- Build Image
+- Test Image
+- Release image
+- Clean image
+- Deploy to Satging
+- Test in staging
+- Deploy to Prod
+- 
+
 
 voir [ici](https://github.com/diranetafen/student-list.git "here")
 
