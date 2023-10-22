@@ -415,7 +415,7 @@ pipeline {
 
 <strong>Notification Slack </strong><br/>
 <div align="center">
-<img src="screenshots/slack-notif.png" width="100%" height="100%">
+<img src="screenshots/xnotification-slack.png" width="100%" height="100%">
 </div>
 
 <strong>Test in staging	 </strong><br/>
