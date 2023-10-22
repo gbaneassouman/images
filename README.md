@@ -119,6 +119,7 @@ CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
 Création du pipeline
+
 Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard
 
 ![](screenshots/staticweb.png)
