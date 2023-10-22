@@ -417,7 +417,7 @@ pipeline {
 
 <strong>Test in staging	 </strong><br/>
 
-![](screenshots/staging-test.png)
+![](screenshots/staging-tests.png)
 
 <strong>Test in Prod	 </strong><br/>
 
