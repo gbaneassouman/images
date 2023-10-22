@@ -168,7 +168,7 @@ confirmation que le webhook marche
 
 ![](screenshots/webhook-conf.png)
 
-![](screenshots/webhook-triger.png)
+![](screenshots/triger.png)
 
 Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir **Pipeline script from SCM**
 ![](screenshots/choix-jenkins.png)
@@ -267,7 +267,8 @@ Les Stages sont:
 - Test in staging
 - Deploy to Prod
 et les éléments ci-dessous ont été variabilisés pour faciliter leur réutilisation dans les différents stages:
-- IMAGE_NAME, IMAGE_TAG, DOCKER_HUB, HOST_PORT, INTERNAL_PORT, CONTAINER, STAGING_IP, PROD_IP, USER_NAME, STAGING_NAME, PROD_NAME
+
+IMAGE_NAME, IMAGE_TAG, DOCKER_HUB, HOST_PORT, INTERNAL_PORT, CONTAINER, STAGING_IP, PROD_IP, USER_NAME, STAGING_NAME, PROD_NAME
 
 voir [ici](https://github.com/diranetafen/student-list.git "here")
 
