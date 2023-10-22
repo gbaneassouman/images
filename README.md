@@ -8,6 +8,7 @@
 Ce Projet dénommé Mini projet jenkins a été réalisé dans le cadre ma formation DEVOPS au 15ième Bootcamp de **EAZYTraining** de Septembre à Novembre 2023.
 
 
+
 ## Objectifs
 Il s’agit ici de mettre en œuvre une chaîne d’intégration continue pour un site web static *(voir image en dessous)* avec jenkins. le code source du site est [ici](https://github.com/diranetafen/static-website-example) .
 
