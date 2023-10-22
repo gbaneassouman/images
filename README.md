@@ -410,7 +410,7 @@ pipeline {
 <strong>Résultat de l'execution du script </strong><br/>
 
 <div align="center">
-<img src="screenshots/pipeline-full.png" width="50%" height="100%">
+<img src="screenshots/pipeline-full.png" width="100%" height="100%">
 </div>
 <strong>Notification Slack </strong><br/>
 
@@ -418,12 +418,13 @@ pipeline {
 
 <strong>Test in staging	 </strong><br/>
 
-![](screenshots/staging-tests.png)
-
+<div align="center">
+<img src="screenshots/staging-tests.png" width="100%" height="100%">
+</div>
 <strong>Test in Prod	 </strong><br/>
-
-![](screenshots/prod-test.png)
-
+<div align="center">
+<img src="screenshots/prod-test.png" width="100%" height="100%">
+</div>
 ## 🚀 à propos de moi
 
 Session           : Bootcamp DevOps N°15 de EAZYTraining
