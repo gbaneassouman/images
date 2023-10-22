@@ -125,9 +125,12 @@ Création du pipeline
 Mise en place d'un webhook pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
 Pour cela il faut:
 - Configurer le webhook depuis le repository github
+  
 ![](screenshots/github-webhook.png)
+
 - Renseigner l'url du repository dans le pipeline 
 - Autoriser le déclenchement du webhook
+  
 ![](screenshots/webhook-trigger.png)
 
 
