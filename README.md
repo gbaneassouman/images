@@ -270,7 +270,6 @@ et les éléments ci-dessous ont été variabilisés pour faciliter leur réutil
 
 IMAGE_NAME, IMAGE_TAG, DOCKER_HUB, HOST_PORT, INTERNAL_PORT, CONTAINER, STAGING_IP, PROD_IP, USER_NAME, STAGING_NAME, PROD_NAME
 
-voir [ici](https://github.com/diranetafen/student-list.git "here")
 
 
 ## 🚀 à propos de moi
