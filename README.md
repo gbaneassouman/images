@@ -271,8 +271,6 @@ et les éléments ci-dessous ont été variabilisés pour faciliter leur réutil
 
 IMAGE_NAME, IMAGE_TAG, DOCKER_HUB, HOST_PORT, INTERNAL_PORT, CONTAINER, STAGING_IP, PROD_IP, USER_NAME, STAGING_NAME, PROD_NAME
 
-<<<<<<< HEAD
-=======
 <strong>Jenkinsfile</strong><br/>
 ```
 /* groovylint-disable NglParseError */
@@ -409,9 +407,12 @@ pipeline {
     }
 }
 ```
-voir [ici](https://github.com/diranetafen/student-list.git "here")
->>>>>>> 84c8444d7f9e9260e5dc52f74ce9739524fa1ed5
+<strong>Résultat de l'execution du script </strong><br/>
+![](screenshots/pipeline-full.png)
 
+<strong>Notification Slack </strong><br/>
+
+![](screenshots/slack-notif.png)
 
 ## 🚀 à propos de moi
 
