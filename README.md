@@ -22,6 +22,7 @@ Pour la réalisation du project j'ai procédé comme suit:
 - Mettre en place le Pipeline
   - Configurer github webhook
   - Intégrer la notification slack
+  - Production du Jenkinsfile
 
 
 
