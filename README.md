@@ -142,6 +142,14 @@ confirmation que le webhook marche
 Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir Pipeline script from SCM
 ![](screenshots/choix-jenkins.png)
 
+### Installation des plugins
+Pour l'installation des puglins necéssaires au pipeline on va dans **Tableau de bord -> Administrer jenkins -> Plugins -> Available plugins** puis chercher les plugins suivants:
+- Docker 
+- Docker pipeline
+- Docker plugin
+- Github integration Plugin
+- SSH Agent plugin
+
 # Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
