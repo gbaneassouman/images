@@ -153,12 +153,13 @@ Pour l'installation des puglins necéssaires au pipeline on va dans
 - SSH Agent plugin
 
 ### Création des crédentials
-Afin de pusher l'image buildée sur docherhub et de se connecter sur le serveur de staging et de prod via ssh on va créer les identifiants ci-dessous:
+Afin de pusher l'image buildée sur Docherhub *(hub.docker.com)* et de se connecter sur les serveurs de staging et de prod via ssh on va créer les identifiants ci-dessous:
 - dockerhub-credential de type Nom d'utilisateur et mot de passe
-- staging-aera de type Secret text	ici on copie la clé privée de connexion du serveur
-- prod-area de type Secret text	ici on copie la clé privée de connexion du serveur
+- SSH-KEY de type SSH Username with private key	ici on copie la clé privée de connexion du serveur de staging
+- prod-area de type SSH Username with private key	ici on copie la clé privée de connexion du serveur de la prod
 - slack-text de type Secret text	pour l'intégration de slack
-il faut au préalable aller dans le **Tableau de bord -> Administrer jenkins -> credential**
+
+il faut au préalable aller dans **Tableau de bord -> Administrer jenkins -> credentials**
 
 ![](screenshots/credentials.png)
 
