@@ -408,11 +408,20 @@ pipeline {
 }
 ```
 <strong>Résultat de l'execution du script </strong><br/>
+
 ![](screenshots/pipeline-full.png)
 
 <strong>Notification Slack </strong><br/>
 
 ![](screenshots/slack-notif.png)
+
+<strong>Test in staging	 </strong><br/>
+
+![](screenshots/staging-test.png)
+
+<strong>Test in Prod	 </strong><br/>
+
+![](screenshots/prod-test.png)
 
 ## 🚀 à propos de moi
 
