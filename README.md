@@ -410,7 +410,7 @@ pipeline {
 <strong>Résultat de l'execution du script </strong><br/>
 
 <div align="center">
-<img src="screenshots/pipeline-full.png" width="50%" height="50%">
+<img src="screenshots/pipeline-full.png" width="50%" height="100%">
 </div>
 <strong>Notification Slack </strong><br/>
 
