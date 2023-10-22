@@ -46,7 +46,7 @@ services:
   jenkins:
     image: jenkins/jenkins:lts
     container_name: jenkins
-    restart: always
+    restart: alwaysIntrégation de la notification Slack 
     privileged: true
     user: root #update to set it for jenkins
     ports:
@@ -119,31 +119,6 @@ EXPOSE 80
 CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
-- <strong>Création du pipeline</strong><br/>
-
-Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard
-
-![](screenshots/staticweb.png)
-
-- <strong>Mise en place du webhook </strong><br/>
-
-Pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
-Pour cela il faut:
-- Renseigner l'url du repository dans le pipeline 
-- Autoriser le déclenchement du webhook
-  
-![](screenshots/webhook-trigger.png)
-
-- Configurer le webhook depuis le repository github
-  
-![](screenshots/github-webhook.png)
-
-confirmation que le webhook marche
-
-![](screenshots/webhook-conf.png)
-
-Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir Pipeline script from SCM
-![](screenshots/choix-jenkins.png)
 
 - <strong>Installation des plugins </strong><br/>
 Pour l'installation des puglins necéssaires au pipeline on va dans 
@@ -166,13 +141,38 @@ il faut au préalable aller dans **Tableau de bord -> Administrer jenkins -> cre
 
 ![](screenshots/credentials.png)
 
-- <strong>Intrégation de la notification Slack </strong><br/>
+- <strong>Création du pipeline</strong><br/>
+
+Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard
+
+![](screenshots/staticweb.png)
+
+# Configuration de github webhook
+
+Pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
+Pour cela il faut:
+- Renseigner l'url du repository dans le pipeline 
+- Autoriser le déclenchement du webhook
+  
+![](screenshots/webhook-trigger.png)
+
+- Configurer le webhook depuis le repository github
+  
+![](screenshots/github-webhook.png)
+
+confirmation que le webhook marche
+
+![](screenshots/webhook-conf.png)
+
+Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir Pipeline script from SCM
+![](screenshots/choix-jenkins.png)
+
+# Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
 Nous allons intégrer slack à notre environnement jenkins pour recevoir directement des notifications après l'execution de notre pipeline.
 
-
-# Installation du plugin slack-notification
+- <strong>Installation du plugin slack-notification</strong><br/>
 
 Voici les étapes à suivre pour ajouter l’intégration Jenkins CI.
 
