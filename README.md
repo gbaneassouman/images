@@ -419,7 +419,7 @@ pipeline {
 <strong>Test in staging	 </strong><br/>
 
 <div align="center"><br/>
-<img src="screenshots/staging-tests.png" width="100" height="1000px"><br/>
+<img src="screenshots/staging-tests.png" width="1000px" height="1000px"><br/>
 </div>
 
 <strong>Test in Prod	 </strong><br/>
