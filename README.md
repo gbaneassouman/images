@@ -123,7 +123,7 @@ CMD [ "nginx","-g","daemon off;" ]
 <strong>Installation des plugins </strong><br/>
 Pour l'installation des puglins necéssaires au pipeline on va dans 
 
-**Tableau de bord -> Administrer jenkins -> Plugins -> Available plugins** puis chercher les plugins suivants:
+**Tableau de bord -> Administrer jenkins -> Plugins -> Available plugins** puis chercher et installer les plugins suivants:
 - Docker 
 - Docker pipeline
 - Docker plugin
@@ -147,10 +147,10 @@ Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans 
 
 ![](screenshots/staticweb.png)
 
-## Configuration de github webhook
+## Configuration du webhook
 
-Pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
-Pour cela il faut:
+Pour déclencher automatiquement le lancement du pipeline à partir d'une action réalisée sur GitHub 
+il faut:
 - Renseigner l'url du repository dans le pipeline 
 - Autoriser le déclenchement du webhook
   
@@ -164,7 +164,7 @@ confirmation que le webhook marche
 
 ![](screenshots/webhook-conf.png)
 
-Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir Pipeline script from SCM
+Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir **Pipeline script from SCM**
 ![](screenshots/choix-jenkins.png)
 
 ## Intrégation de la notification Slack 
@@ -197,17 +197,15 @@ Pour obtenir le **workspace** et **Token** il faut au préalable:
 - 1 créer un compte slack 
 - 2 configurer l'intégration de jenkins à partir d'[ici](https://myspace.slack.com/services/new/jenkins-ci)
 
-
-
 ![](screenshots/slack-integration.png)
 
 à partir de cet instant on peux ajouter les notifications slack dans le **Jenkinsfile**
 
-à fin de rendre disponible la notification slack à tous les projets, je l'ai transformé en **Shared Library** ce qui va permettre de faire un simple appel dans les **Jenkinsfiles**.
+à fin de rendre disponible la notification slack à tous les projets, je l'ai transformé en **Shared Library** qui va permettre de faire un simple appel dans les **Jenkinsfiles**.
 
 Pour ce faire j'ai :
 
-- créée un depôt **Github** [voir ici](https://github.com/gbaneassouman/shared-library/blob/main/vars/slackNotifier.groovy) et ajouté un fichier de type groovy appelé *(slackNotifier.groovy)* ensuite definir la fonction de notification
+- créée un depôt **Github** [voir ici](https://github.com/gbaneassouman/shared-library/blob/main/vars/slackNotifier.groovy) et ajouté un fichier de type groovy appelé *slackNotifier.groovy* ensuite definir la fonction de notification
 
 ```
 #!/usr/bin/env groovy
@@ -250,8 +248,10 @@ post {
         }
     }
 ```
-- <strong>Production de jenkinsfile </strong><br/>
-Le Jenkinsfile contient 08 stages et un Post Actions qui sont:
+## Production de jenkinsfile 
+Le Jenkinsfile contient 08 stages et un Post Actions pour slack
+
+Les Stages sont:
 - Cloning code
 - Build Image
 - Test Image
@@ -260,8 +260,6 @@ Le Jenkinsfile contient 08 stages et un Post Actions qui sont:
 - Deploy to Satging
 - Test in staging
 - Deploy to Prod
-- 
-
 
 voir [ici](https://github.com/diranetafen/student-list.git "here")
 
