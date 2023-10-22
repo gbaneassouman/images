@@ -152,6 +152,16 @@ Pour l'installation des puglins necéssaires au pipeline on va dans
 - Github integration Plugin
 - SSH Agent plugin
 
+### Création des crédentials
+Afin de pusher l'image buildée sur docherhub et de se connecter sur le serveur de staging et de prod via ssh on va créer les identifiants ci-dessous:
+- dockerhub-credential de type Nom d'utilisateur et mot de passe
+- staging-aera de type Secret text	ici on copie la clé privée de connexion du serveur
+- prod-area de type Secret text	ici on copie la clé privée de connexion du serveur
+- slack-text de type Secret text	pour l'intégration de slack
+il faut au préalable aller dans le **Tableau de bord -> Administrer jenkins -> credential**
+
+![](screenshots/credentials.png)
+
 # Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
