@@ -5,19 +5,19 @@
 
 </div>
 
-Ce Projet dénommé Mini projet jenkins a été réalisé dans le cadre ma formation DEVOPS au cours du Bootcamp numéro 15 de **EAZYTraining avec Dirane Tafen et Ulrich Monji** qui s'est deroulé de Septembre à Novembre 2023.
+Ce Projet dénommé Mini projet jenkins a été réalisé dans le cadre ma formation DEVOPS au 15ième Bootcamp de **EAZYTraining** de Septembre à Novembre 2023.
 
 
 ## Objectifs
-Il s’agit ici de mettre en œuvre une chaîne d’intégration continue pour un site web static *(voir image en dessous)* avec jenkins. le code source est [ici](https://github.com/diranetafen/static-website-example) .
+Il s’agit ici de mettre en œuvre une chaîne d’intégration continue pour un site web static *(voir image en dessous)* avec jenkins. le code source du site est [ici](https://github.com/diranetafen/static-website-example) .
 
 ![](screenshots/pipeline.png)
  
-## À faire
-Pour la réalisation du project j'ai procédé comme suit:
+## Tâches réalisées
+Pour la réalisation de ce project j'ai effectuée les tâches ci-dessous:
 - Provisionner 3 VPS 
 - Installer docker sur chaque vps 
-- Installer jenkins sur le vps 
+- Installer jenkins sur un des vps 
 - Produire le Dockerfile pour le Build
 - Mettre en place le Pipeline
   - Configuration de github webhook
@@ -87,7 +87,7 @@ RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
 
 ```
 
-et  enfin configuré letsencrypt avec un sous-domaine.
+et  enfin installé et configuré letsencrypt avec un sous-domaine sur chaque VPS.
 
 ![](screenshots/jenkins-url.jpg)
 
@@ -109,7 +109,7 @@ LABEL maintainer="GBANE Assouman gbane.assouman@gmail.com"
 - <strong>Répertoire du site</strong><br/>
 WORKDIR /usr/share/nginx/html
 
-- <strong>Copie des fichiers dans le répertoire</strong><br/>
+- <strong>Copie des fichiers dans le répertoire WORKDIR</strong><br/>
 COPY . .
 
 - <strong>Port d'écoute de NGINX </strong><br/>
@@ -119,10 +119,10 @@ EXPOSE 80
 CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
-Pour la mise du pipeline il faut:
+Pour la mise en place du pipeline il faut:
 - installer les plugins necéssaires
 - créer des credentials
-- créer le pipeline
+- créer un nouveau item de type pipeline
   
 <strong>Installation des plugins </strong><br/>
 Pour l'installation des puglins necéssaires au pipeline on va dans 
@@ -136,18 +136,18 @@ Pour l'installation des puglins necéssaires au pipeline on va dans
 
 <strong>Création des crédentials</strong><br/>
 Afin de pusher l'image buildée sur Docherhub *(hub.docker.com)* et de se connecter sur les serveurs de staging et de prod via ssh on va créer les identifiants ci-dessous:
-- dockerhub-credential de type Nom d'utilisateur et mot de passe
-- SSH-KEY de type SSH Username with private key	ici on copie la clé privée de connexion du serveur de staging
-- prod-area de type SSH Username with private key	ici on copie la clé privée de connexion du serveur de la prod
-- slack-text de type Secret text	pour l'intégration de slack
+- dockerhub-credential de type Nom d'utilisateur et mot de passe pour **Dockerhub**
+- SSH-KEY de type SSH Username with private key	(copier la clé privée de connexion du serveur de staging)
+- prod-area de type SSH Username with private key	(copier la clé privée de connexion du serveur de la prod)
+- slack-text de type Secret text	pour l'intégration de slack 
 
-il faut au préalable aller dans **Tableau de bord -> Administrer jenkins -> credentials**
+il faut au préalable aller dans **Tableau de bord -> Administrer jenkins -> credentials** pour la création des credentials
 
 ![](screenshots/credentials.png)
 
 <strong>Création du pipeline</strong><br/>
 
-Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard
+Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard puis Pipeline
 
 ![](screenshots/staticweb.png)
 
@@ -211,7 +211,7 @@ Pour obtenir le **workspace** et **Token** il faut au préalable:
 
 Pour ce faire j'ai :
 
-- créée un depôt **Github** [voir ici](https://github.com/gbaneassouman/shared-library/blob/main/vars/slackNotifier.groovy) et ajouté un fichier de type groovy appelé *slackNotifier.groovy* ensuite definir la fonction de notification
+- créée un depôt **Github** [voir ici](https://github.com/gbaneassouman/shared-library/blob/main/vars/slackNotifier.groovy) et ajouté un fichier de type groovy appelé *slackNotifier.groovy* ensuite definir la fonction de notification ci-dessous
 
 ```
 #!/usr/bin/env groovy
@@ -255,14 +255,14 @@ post {
     }
 ```
 ## Production de jenkinsfile 
-Le Jenkinsfile contient 08 stages et un Post Actions pour slack
+Le Jenkinsfile contient **08 stages** et un **Post Actions** pour slack
 
 Les Stages sont:
-- Cloning code
-- Build Image
-- Test Image
-- Release image
-- Clean image
+- Cloning code *(recupère le code sur github)*
+- Build Image  *(Build de l'image)*
+- Test Image  *(test de l'image en créant un conteneur)*
+- Release image *(envoie l'image sur dockerhub)*
+- Clean image  *(arrête et supprime l'image)*
 - Deploy to Satging
 - Test in staging
 - Deploy to Prod
@@ -438,12 +438,4 @@ Prénoms & Nom : Assouman GBANE
 
 LinkedIn          : https://www.linkedin.com/in/gbane-assouman-4ab183123/
 
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`API_KEY`
-
-`ANOTHER_API_KEY`
 
