@@ -430,14 +430,10 @@ pipeline {
 <div align="center">
 <img src="screenshots/prod-test.png" width="100%" height="100%">
 </div>
-## 🚀 à propos de moi
+## 🚀 Conclusion
+Ce fut une expérience enrichissante pour moi car ce module m'a permis de mettre en pratique les connaissances acquises sur Docker, et Jenkins
 
-Session           : Bootcamp DevOps N°15 de EAZYTraining
-
-Période           : Septembre - Novembre
-
-Prénoms & Nom : Assouman GBANE 
-
+Assouman GBANE 
 LinkedIn          : https://www.linkedin.com/in/gbane-assouman-4ab183123/
 
 
