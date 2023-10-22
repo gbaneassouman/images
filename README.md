@@ -120,7 +120,7 @@ CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
 
-- <strong>Installation des plugins </strong><br/>
+<strong>Installation des plugins </strong><br/>
 Pour l'installation des puglins necéssaires au pipeline on va dans 
 
 **Tableau de bord -> Administrer jenkins -> Plugins -> Available plugins** puis chercher les plugins suivants:
@@ -130,7 +130,7 @@ Pour l'installation des puglins necéssaires au pipeline on va dans
 - Github integration Plugin
 - SSH Agent plugin
 
-- <strong>Création des crédentials</strong><br/>
+<strong>Création des crédentials</strong><br/>
 Afin de pusher l'image buildée sur Docherhub *(hub.docker.com)* et de se connecter sur les serveurs de staging et de prod via ssh on va créer les identifiants ci-dessous:
 - dockerhub-credential de type Nom d'utilisateur et mot de passe
 - SSH-KEY de type SSH Username with private key	ici on copie la clé privée de connexion du serveur de staging
@@ -141,7 +141,7 @@ il faut au préalable aller dans **Tableau de bord -> Administrer jenkins -> cre
 
 ![](screenshots/credentials.png)
 
-- <strong>Création du pipeline</strong><br/>
+<strong>Création du pipeline</strong><br/>
 
 Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard
 
