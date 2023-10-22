@@ -15,13 +15,13 @@ Il s’agit ici de mettre en œuvre une chaîne d’intégration continue pour u
  
 ## À faire
 Pour la réalisation du project j'ai procédé comme suit:
-- 1 Provisionner 3 VPS 
-- 2 installer docker sur chaque vps 
-- 3 Installer jenkins sur le vps 
-- 4 Produire le Dockerfile pour le Build
-- 5 Mettre en place le Pipeline
-- 6 Configurer github webhook
-- 7 Intégrer la notification slack
+- Provisionner 3 VPS 
+- Installer docker sur chaque vps 
+- Installer jenkins sur le vps 
+- Produire le Dockerfile pour le Build
+- Mettre en place le Pipeline
+- Configurer github webhook
+- Intégrer la notification slack
 
 
 
