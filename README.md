@@ -168,7 +168,7 @@ confirmation que le webhook marche
 
 ![](screenshots/webhook-conf.png)
 
-![](screenshots/webhook-triger.png)
+![](screenshots/triger.png)
 
 Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir **Pipeline script from SCM**
 ![](screenshots/choix-jenkins.png)
