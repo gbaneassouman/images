@@ -1,7 +1,7 @@
 
 # Mini Projet Jenkins
 <div align="center">
-<img src="https://github.com/Tony-Dja/Jenkins_pipeline_HEROKU_deployment/blob/672b58d62fa5d424fb7162e33546c67f3bcbebc2/screenshots/jenkins.png" width="50%" height="50%">
+<img src="screenshots/jenkins-logo.png" width="50%" height="50%">
 
 </div>
 
