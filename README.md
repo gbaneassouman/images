@@ -36,7 +36,7 @@ Sur chaque VPS j’ai installé:
 - docker et docker-compose en suivant la documentation qui se trouve [ici](https://docs.docker.com/engine/install/debian/)
 
 Sur le VPS de jenkins :
-- Jenkins a été installé à l’aide de docker-compose . Dans ma configuration le conteneur n’est accessible que sur la machine hôte à partir de  **127.0.0.1:8080**
+- Jenkins a été installé à l’aide d'un fichier docker-compose . Dans cette configuration le conteneur n’est accessible que sur la machine hôte à partir de  **127.0.0.1:8080**
 
 ```
 version: '3.3'
@@ -119,10 +119,11 @@ CMD [ "nginx","-g","daemon off;" ]
 
 # Mise en place du Pipeline
 Création du pipeline
+Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans le Dashboard
 
 ![](screenshots/staticweb.png)
 
-Mise en place d'un webhook pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
+Mise en place du webhook pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
 Pour cela il faut:
 - Renseigner l'url du repository dans le pipeline 
 - Autoriser le déclenchement du webhook
