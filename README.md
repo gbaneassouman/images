@@ -133,6 +133,7 @@ Pour cela il faut:
   
 ![](screenshots/github-webhook.png)
 
+confirmation que le webhook marche
 ![](screenshots/webhook-conf.png)
 
 # Intrégation de la notification Slack 
