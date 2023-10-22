@@ -147,7 +147,7 @@ Pour créer un nouveau pipeline il faut cliquer sur nouveau item à gauche dans 
 
 ![](screenshots/staticweb.png)
 
-# Configuration de github webhook
+## Configuration de github webhook
 
 Pour déclencher le lancement du pipeline à partir d'une action réalisée sur GitHub 
 Pour cela il faut:
@@ -167,7 +167,7 @@ confirmation que le webhook marche
 Le pipeline sera basée sur un Jenkinsfile donc dans la section pipeline de la configuration il faut choisir Pipeline script from SCM
 ![](screenshots/choix-jenkins.png)
 
-# Intrégation de la notification Slack 
+## Intrégation de la notification Slack 
 ![](https://www.vectorlogo.zone/logos/slack/slack-ar21.svg)
 # 
 Nous allons intégrer slack à notre environnement jenkins pour recevoir directement des notifications après l'execution de notre pipeline.
