@@ -409,8 +409,9 @@ pipeline {
 ```
 <strong>Résultat de l'execution du script </strong><br/>
 
-![](screenshots/pipeline-full.png)
-
+<div align="center">
+<img src="screenshots/pipeline-full.png" width="50%" height="50%">
+</div>
 <strong>Notification Slack </strong><br/>
 
 ![](screenshots/slack-notif.png)
