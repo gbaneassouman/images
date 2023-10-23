@@ -47,7 +47,7 @@ services:
   jenkins:
     image: jenkins/jenkins:lts
     container_name: jenkins
-    restart: alwaysIntrégation de la notification Slack 
+    restart: always
     privileged: true
     user: root #update to set it for jenkins
     ports:
@@ -265,9 +265,9 @@ Les Stages sont:
 - Test Image  *(test de l'image en créant un conteneur)*
 - Release image *(envoie l'image sur dockerhub)*
 - Clean image  *(arrête et supprime l'image)*
-- Deploy to Satging
-- Test in staging
-- Deploy to Prod
+- Deploy to Satging *(déploiement sur le serveur de staging)*
+- Test in staging *(test du conteneur sur le staging avec curl)*
+- Deploy to Prod *(déploiement sur le serveur de prod)*
 
 et les éléments ci-dessous ont été variabilisés pour faciliter leur réutilisation dans les différents stages:
 
@@ -435,7 +435,8 @@ pipeline {
 ## 🚀 Conclusion
 Ce fut une expérience enrichissante pour moi car ce module m'a permis de mettre en pratique les connaissances acquises sur Docker, et Jenkins
 
-Assouman GBANE 
+Assouman GBANE
+
 LinkedIn          : https://www.linkedin.com/in/gbane-assouman-4ab183123/
 
 
